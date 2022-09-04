@@ -1,0 +1,15 @@
+{
+  "name": "servidor-magico",
+  "version": "1.0.0",
+  "description": "es una espectacular servidore",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "server": "cls && node express.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
