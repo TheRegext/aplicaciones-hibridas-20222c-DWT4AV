@@ -68,6 +68,19 @@ client.connect()
         console.log("Alumno actualizado")
         console.log(result)
 
+        // reemplazar un alumno
+
+        const result2 = await Alumnos.replaceOne({
+            _id: new ObjectId("6324e28e46ead9daae28093c")
+        }, {
+            name: "Juan",
+            nota: 8
+        })
+
+        console.log("Alumno reemplazado")   
+        console.log(result2)
+
+
 
 
 
