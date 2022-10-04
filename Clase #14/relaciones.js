@@ -45,3 +45,34 @@ const alumnos = [
         ]
     }
 ]
+
+
+const carreras = [
+    {
+        _id: ObjectId('5f9c1b9b9c9d2b1b8c8c8c8c'),
+        nombre: 'Ingenieria en Sistemas',
+        duracion: 5
+    }
+]
+
+// un producto tiene una categoria
+
+// PRODUCTO      CATEGORIA
+// CATEGORIA      PRODUCTO
+
+const categorias = [
+    {
+        _id: ObjectId('5f9c1b9b9c9d2b1b8c8c8c8c'),
+        name: 'Infusion'
+    }
+]
+
+const productos = [
+    {
+        _id: ObjectId('5f9c1b9b9c9d2b1b8c8c8c8c'),
+        name: "Cafe",
+        price: 350,
+        categoria
+
+    }
+]
