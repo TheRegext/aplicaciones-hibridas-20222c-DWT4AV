@@ -1,0 +1,41 @@
+<% 
+    let action, title;
+    
+    if (producto?._id) {
+        action = "/productos/" + producto._id + "/editar";
+        title = "Editar Producto";
+    } else {
+        action = "/productos/nuevo";
+        title = "Nuevo Producto";
+    }
+    
+    
+    %> 
+
+<%- include('../Layouts/Header', {title})%>
+<h1><%= title %></h1>   
+
+<form action="<%= action %>" method="post" enctype="application/x-www-form-urlencoded">
+    <label>
+        Nombre:
+        <input type="text" name="name" value="<%= producto.name%>" />
+    </label>
+
+    <label>
+        Precio:
+        <input type="number" name="price" value="<%= producto.price%>"/>
+    </label>
+
+    <label>
+        Categoria: 
+        <select name="category">
+            <% for(let i=0; i<categorias.length; i++){ %>
+                <option value="<%= categorias[i].name %>" <%= (categorias[i].name == producto.category) ? "selected": "" %> ><%= categorias[i].name %></option>
+            <% }%>
+        </select>
+    </label>
+
+    <button type="submit">Guardar</button>
+</form>
+
+<%- include('../Layouts/Footer')%>

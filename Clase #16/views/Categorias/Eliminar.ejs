@@ -1,0 +1,10 @@
+<%- include('../Layouts/Header', {title: categoria.name })%>
+
+<h1>Eliminar categoria</h1>
+    <p>Nombre: <%= categoria.name %></p>
+    <a href="/categorias">Ver Todos</a>
+    <form action="/categorias/<%= categoria._id %>/eliminar" method="post">
+        <button type="submit">Eliminar</button>
+    </form>
+    
+<%- include('../Layouts/Footer')%>
