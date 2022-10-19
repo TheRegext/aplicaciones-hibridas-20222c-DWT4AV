@@ -1,0 +1,31 @@
+<%- include('../Layouts/Header', {title: "Lista de productos"})%>
+    
+    <h1>Lista de Productos</h1>
+    
+    <a href="/productos/nuevo">Agregar Producto</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < productos.length; i++) { %>
+                <tr>
+                    <td><%= productos[i].name %></td>
+                    <td>$<%= productos[i].price %></td>
+                    <td><%= productos[i].category %></td>
+                    <td>
+                        <a href="/productos/<%= productos[i]._id %>">Ver</a>
+                        <a href="/productos/<%= productos[i]._id %>/editar">Editar</a>
+                        <a href="/productos/<%= productos[i]._id %>/eliminar">Eliminar</a>
+                    </td>
+                </tr>
+            <% } %>
+    </table>
+
+<%- include('../Layouts/Footer')%>
