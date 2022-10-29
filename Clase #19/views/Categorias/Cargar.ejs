@@ -1,0 +1,24 @@
+<% 
+    let action, title;
+    
+    if (categoria?._id) {
+        action = "/categorias/" + categoria._id + "/editar";
+        title = "Editar Categoria";
+    } else {
+        action = "/categorias/nuevo";
+        title = "Nuevo Categoria";
+    }
+%> 
+
+<%- include('../Layouts/Header', {title})%>
+<h1><%= title %></h1>   
+
+<form action="<%= action %>" method="post" enctype="application/x-www-form-urlencoded">
+    <label>
+        Nombre:
+        <input type="text" name="name" value="<%= categoria.name%>" />
+    </label>
+    <button type="submit">Guardar</button>
+</form>
+
+<%- include('../Layouts/Footer')%>
