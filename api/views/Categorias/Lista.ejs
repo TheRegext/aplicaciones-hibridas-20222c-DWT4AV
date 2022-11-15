@@ -1,0 +1,27 @@
+<%- include('../Layouts/Header', {title: "Lista de categorias"})%>
+    
+    <h1>Lista de Categorias</h1>
+    
+    <a href="/categorias/nuevo">Agregar categoria</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let i = 0; i < categorias.length; i++) { %>
+                <tr>
+                    <td><%= categorias[i].name %></td>
+                    <td>
+                        <a href="/categorias/<%= categorias[i]._id %>">Ver</a>
+                        <a href="/categorias/<%= categorias[i]._id %>/editar">Editar</a>
+                        <a href="/categorias/<%= categorias[i]._id %>/eliminar">Eliminar</a>
+                    </td>
+                </tr>
+            <% } %>
+    </table>
+
+<%- include('../Layouts/Footer')%>

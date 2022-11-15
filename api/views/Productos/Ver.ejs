@@ -1,0 +1,14 @@
+<%- include('../Layouts/Header', {title: product.name })%>
+
+    <h1><%= product.name %></h1>
+    <p>Precio: $<%= product.price %></p>
+    <a href="/productos">Ver Todos</a>
+
+    <h2>Opiniones</h2>
+    <ul>
+        <% for (let i = 0; i < reviews.length; i++) { %>
+            <li><%= reviews[i].text %></li>
+        <% } %>
+    </ul>
+    
+<%- include('../Layouts/Footer')%>
