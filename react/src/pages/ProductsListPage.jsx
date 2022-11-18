@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import * as ProductServices from '../services/product.services';
 
+import {Link} from 'react-router-dom'
+
 function ProductsListPage() {
     const [products, setProducts] = useState([]);
     /*
@@ -48,9 +50,9 @@ function ProductsListPage() {
         <div>
             <h1>Products List</h1>
             <ul>
-                {products.map(({name, price}) =>
+                {products.map(({_id, name, price}) =>
                     <li>
-                        Nombre: {name} - Precio: ${price}
+                        Nombre: {name} - Precio: ${price} <Link to={`/products/${_id}`}>Ver</Link>
                     </li>)}
             </ul>
         </div>
