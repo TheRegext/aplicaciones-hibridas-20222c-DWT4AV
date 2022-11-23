@@ -5,6 +5,7 @@ import CategoriasRoute from './routes/categorias.routes.js'
 import ProductosApiRoute from './api/routes/productos.api.routes.js'
 import CategoriasApiRoute from './api/routes/categorias.api.routes.js'
 import ProdfavsApiRoute from './api/routes/prodfavs.api.routes.js'
+import UsersApiRoute from './api/routes/users.api.routes.js'
 
 const app = express()
 app.set("view engine", "ejs")
@@ -20,7 +21,7 @@ app.use('/', CategoriasRoute)
 app.use('/', ProductosApiRoute)
 app.use('/', CategoriasApiRoute)
 app.use('/', ProdfavsApiRoute)
-
+app.use('/', UsersApiRoute)
 
 
 app.listen(2022, function () {
