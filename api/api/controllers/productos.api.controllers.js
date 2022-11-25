@@ -1,10 +1,12 @@
 import * as ProductosServices from '../../services/productos.services.js';
+import jwt from 'jsonwebtoken'
 
 // req.params -> son los parametros que vienen en la url -> /api/productos/:idProducto
 // req.body -> son los parametros que vienen en el body de la peticion -> POST, PUT, PATCH
 // req.query -> son los parametros que vienen en el query (parametros de consulta) -> ?param1=valor1&param2=valor2
 
 function findAll(req, res) {
+
     const filter = {}
     const order = {}
 
@@ -24,12 +26,13 @@ function findAll(req, res) {
         order[req.query.sort] = req.query.order === 'desc' ? -1 : 1
     }
 
-
-
     ProductosServices.traerProductos(filter, order)
         .then(function (productos) {
             res.status(200).json(productos)
         })
+
+
+
 }
 
 function create(req, res) {
@@ -46,6 +49,7 @@ function create(req, res) {
 }
 
 function findById(req, res) {
+
     const id = req.params.idProducto
 
     ProductosServices.traerProductoByID(id)

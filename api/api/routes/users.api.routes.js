@@ -8,6 +8,9 @@ const router = express.Router()
 router.route('/api/users/login')
     .post(usersController.login)
 
+router.route('/api/users/logout')
+    .post(usersController.logout)
+
 
 router.route('/api/users')
     .get(usersController.find)

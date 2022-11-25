@@ -34,6 +34,14 @@ async function find(filter) {
     return usersCollection
 }
 
+async function findById(id) {
+    await client.connect()
+
+    const user = await users.findOne({ _id: ObjectId(id) })
+
+    return user
+}
+
 async function create(user) {
     const newUser = { ...user }
 
@@ -62,6 +70,7 @@ async function remove(id) {
 
 export {
     find,
+    findById,
     create,
     remove,
     login

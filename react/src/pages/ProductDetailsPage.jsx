@@ -21,7 +21,6 @@ function ProductDetailsPage(){
             <p>Product Name: {product.name}</p>
             <p>Product Price: {product.price}</p>
             <p>Product Category: {product.category}</p>
-
             <Link to={`/products/632e0a1cb24b83672e9e36c1`}>Café Americano</Link>
         </div>
     )
